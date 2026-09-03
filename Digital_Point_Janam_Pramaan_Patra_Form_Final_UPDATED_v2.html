@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DIGITAL POINT | जन्म प्रमाण पत्र फॉर्म</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f3f6f8;font-family:Arial,"Noto Sans Devanagari",sans-serif;color:#17212b}
+.wrap{max-width:680px;margin:auto;padding:16px}.card{background:#fff;border-radius:18px;padding:20px;box-shadow:0 4px 18px #0002}
+h1{text-align:center;margin:0;font-size:23px}.brand{text-align:center;font-weight:bold;margin:5px 0 18px;font-size:14px}
+.note{background:#fff7df;border-radius:10px;padding:12px;font-size:13px;line-height:1.5;margin-bottom:18px}
+.section{font-weight:bold;font-size:17px;margin:20px 0 8px;border-bottom:1px solid #ddd;padding-bottom:6px}
+label{display:block;font-weight:bold;margin:12px 0 5px;font-size:14px}
+input,select{width:100%;padding:12px;border:1px solid #cfd6dc;border-radius:9px;font-size:16px;background:#fff}
+button{width:100%;border:0;border-radius:10px;padding:13px;font-size:17px;font-weight:bold;margin-top:18px;cursor:pointer}
+#make{background:#128c7e;color:white}.wa{background:#25d366;color:#fff}.copy{background:#eef2f5;color:#17212b}
+textarea{width:100%;height:330px;margin-top:16px;padding:12px;border:1px solid #ccd4da;border-radius:10px;font-size:14px;line-height:1.45}
+.small{text-align:center;color:#66727c;font-size:12px;margin-top:14px}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<h1>📋 जन्म प्रमाण पत्र हेतु फॉर्म</h1>
+<div class="brand">DIGITAL POINT • Fast • Secure • Trusted Service</div>
+<div class="note">⚠️ सभी जानकारी सही-सही भरें। गलत जानकारी पाए जाने पर उसकी जिम्मेदारी आवेदक की स्वयं की होगी।</div>
+
+<div class="section">👤 आवेदक की जानकारी</div>
+<label>नाम</label><input id="name" placeholder="नाम लिखें">
+<label>आधार नंबर</label><input id="aadhaar" inputmode="numeric" maxlength="12" placeholder="आधार नंबर लिखें">
+
+<div class="section">👨 पिता की जानकारी</div>
+<label>पिता का नाम</label><input id="father" placeholder="पिता का नाम">
+<label>पिता का आधार नंबर</label><input id="faadhaar" inputmode="numeric" maxlength="12" placeholder="आधार नंबर">
+
+<div class="section">👩 माता की जानकारी</div>
+<label>माता का नाम</label><input id="mother" placeholder="माता का नाम">
+<label>माता का आधार नंबर</label><input id="maadhaar" inputmode="numeric" maxlength="12" placeholder="आधार नंबर">
+
+<div class="section">🎂 जन्म की जानकारी</div>
+<label>जन्म तिथि</label><input id="dob" type="date">
+<label>लिंग</label><select id="gender"><option value="">चुनें</option><option>MALE</option><option>FEMALE</option></select>
+
+<div class="section">🏠 पता</div>
+<label>गाँव का नाम</label><input id="village">
+<label>पोस्ट</label><input id="post">
+<label>थाना</label><input id="ps">
+<label>प्रखंड / तहसील</label><input id="block">
+<label>जिला</label><input id="district">
+<label>राज्य</label><input id="state" value="BIHAR">
+<label>पिन कोड</label><input id="pin" inputmode="numeric" maxlength="6">
+
+<div class="section">📎 दस्तावेज</div>
+<label>आवेदक का आधार</label><select id="doc1"><option>हाँ</option><option>नहीं</option></select>
+<label>पिता का आधार</label><select id="doc2"><option>हाँ</option><option>नहीं</option></select>
+<label>माता का आधार</label><select id="doc3"><option>हाँ</option><option>नहीं</option></select>
+<label>Birth Proof</label><select id="doc4"><option>हाँ</option><option>नहीं</option></select>
+
+<button id="make" onclick="make()">फॉर्म तैयार करें</button>
+<textarea id="out" readonly placeholder="फॉर्म तैयार करने के बाद WhatsApp संदेश यहाँ दिखाई देगा।"></textarea>
+<button class="copy" onclick="copyText()">📋 मैसेज कॉपी करें</button>
+<button class="wa" onclick="sendWA()">🟢 WhatsApp पर भेजें</button>
+<div class="small" style="background:#fff3cd;border:2px solid #f0ad4e;border-radius:10px;padding:12px;font-size:13px;line-height:1.6;text-align:left;">
+📸 <strong>दस्तावेज भेजने का जरूरी निर्देश:</strong><br>
+जिस-जिस दस्तावेज में “हाँ” चुना गया है, उस दस्तावेज की <strong>Front (आगे) और Back (पीछे)</strong> दोनों तरफ की <strong>साफ और पूरी फोटो</strong> WhatsApp पर जरूर भेजें।
+</div>
+</div></div>
+
+<script>
+const v=id=>document.getElementById(id).value.trim();
+function make(){
+ let dob=v('dob');
+ if(dob){let d=new Date(dob+'T00:00:00');dob=String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();}
+ let t=`📋 *जन्म प्रमाण पत्र बनवाने हेतु फॉर्म*
+
+नाम = ${v('name')}
+आधार नंबर = ${v('aadhaar')}
+
+पिता का नाम = ${v('father')}
+पिता का आधार नंबर = ${v('faadhaar')}
+
+माता का नाम = ${v('mother')}
+माता का आधार नंबर = ${v('maadhaar')}
+
+जन्म तिथि = ${dob}
+लिंग = ${v('gender')}
+
+गाँव का नाम = ${v('village')}
+पोस्ट = ${v('post')}
+थाना = ${v('ps')}
+प्रखंड / तहसील = ${v('block')}
+जिला = ${v('district')}
+राज्य = ${v('state')}
+पिन कोड = ${v('pin')}
+
+📎 *दस्तावेज*
+आवेदक का आधार = ${v('doc1')}
+पिता का आधार = ${v('doc2')}
+माता का आधार = ${v('doc3')}
+Birth Proof = ${v('doc4')}
+
+📸 *जरूरी दस्तावेज निर्देश:*
+जिस-जिस दस्तावेज में “हाँ” चुना गया है, उस दस्तावेज की *Front (आगे) और Back (पीछे)* दोनों तरफ की *साफ और पूरी फोटो* WhatsApp पर जरूर भेजें।
+
+📌 *घोषणा:* मेरे द्वारा दी गई सभी जानकारी सही है। गलत जानकारी पाए जाने पर उसकी जिम्मेदारी मेरी स्वयं की होगी।
+
+*DIGITAL POINT*
+Fast • Secure • Trusted Service`;
+document.getElementById('out').value=t;
+return t;
+}
+async function copyText(){
+ let t=make();
+ try{await navigator.clipboard.writeText(t);alert('मैसेज कॉपी हो गया। अब WhatsApp में भेजें।')}
+ catch(e){alert('नीचे का मैसेज चुनकर Copy करें।')}
+}
+function sendWA(){
+ let t=document.getElementById('out').value||make();
+ window.open('https://wa.me/?text='+encodeURIComponent(t),'_blank');
+}
+</script>
+</body>
+</html>
